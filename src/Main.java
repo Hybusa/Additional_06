@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         //First task
@@ -208,6 +210,29 @@ public class Main {
         System.out.println();
 
 
+        //Ninth task
+        /*
+        Напишите программу, которая выводит в консоль максимальное количество идущих подряд одинаковых
+        символов в строке. Например, в слове "hoopla" буква “о” идет подряд два раза, соответственно,
+        в консоль будет выведено 2.
+        maxBlock("hoopla") → 2
+        maxBlock("abbCCCddBBBxx") → 3
+        maxBlock("") → 0
+        */
+
+        System.out.println("Задание 9:");
+
+        String a9  = "Word";
+        String aSep9 = "X";
+        int nRep = 3;
+
+        String[] words = new String[nRep];
+        Arrays.fill(words, a9);
+
+        String result = String.join(aSep9, words);
+        System.out.println(result);
+
+        //!!!
     }
 
     public static int counterOfSubstr(String a, String b) {
