@@ -2,6 +2,19 @@ import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
+        task1();
+        task2();
+        task3();
+        task4();
+        task5();
+        task6();
+        task7();
+        task8();
+        task9();
+    }
+
+    public static void task1() {
+
         //First task
         /*
         Напишите программу, которая возвращает в качестве результата строку, в которой каждый символ удвоен.
@@ -13,18 +26,20 @@ public class Main {
 
         System.out.println("Задание 1:");
 
-        String s1 = "Hybusa";
+        String s = "Hybusa";
 
         StringBuilder sb = new StringBuilder();
 
-        for (int i = 0; i < s1.length(); i++) {
-            sb.append(s1.charAt(i));
-            sb.append(s1.charAt(i));
+        for (int i = 0; i < s.length(); i++) {
+            sb.append(s.charAt(i));
+            sb.append(s.charAt(i));
         }
 
         System.out.println(sb);
         System.out.println();
+    }
 
+    public static void task2() {
         //Second task
         /*
         Напишите программу, которая возвращает в качестве значения строку, в которой слово
@@ -39,15 +54,17 @@ public class Main {
 
         System.out.println("Задание 2:");
 
-        String s2 = "<<>>";
-        String s22 = "Hybusa";
-        int separator = s2.length() / 2;
+        String s = "<<>>";
+        String s2 = "Hybusa";
+        int separator = s.length() / 2;
 
-        String out2 = s2.substring(0, separator) + s22 + s2.substring(separator);
-        System.out.println(out2);
+        String out = s.substring(0, separator) + s2 + s.substring(separator);
+        System.out.println(out);
         System.out.println();
 
+    }
 
+    public static void task3() {
         //Third task
         /*
         Даны две строки, a и b. Напишите программу, которая возвращает новую строку,
@@ -61,19 +78,21 @@ public class Main {
 
         System.out.println("Задание 3:");
 
-        String a3 = "Hybusa";
-        String b3 = "Bobopooh";
+        String a = "Hybusa";
+        String b = "Bobopooh";
 
 
-        if (a3.length() == 0)
-            a3 = "@";
-        if (b3.isEmpty())
-            b3 = "@";
+        if (a.length() == 0)
+            a = "@";
+        if (b.isEmpty())
+            b = "@";
 
-        String out3 = String.valueOf(a3.charAt(0)) + b3.charAt(b3.length() - 1);
-        System.out.println(out3);
+        String out = String.valueOf(a.charAt(0)) + b.charAt(b.length() - 1);
+        System.out.println(out);
         System.out.println();
+    }
 
+    public static void task4() {
         //Fourth task
         /*
         Напишите программу, которая возвращает в качестве значения новую строку,
@@ -85,19 +104,21 @@ public class Main {
 
         System.out.println("Задание 4:");
 
-        String a4 = "qwerty";
+        String a = "qwerty";
 
-        char[] charArr = a4.toCharArray();
+        char[] charArr = a.toCharArray();
 
         char tmp = charArr[charArr.length - 2];
         charArr[charArr.length - 2] = charArr[charArr.length - 1];
         charArr[charArr.length - 1] = tmp;
 
-        String out4 = new String(charArr);
+        String out = new String(charArr);
 
-        System.out.println(out4);
+        System.out.println(out);
         System.out.println();
+    }
 
+    public static void task5() {
         //Fifth task
         /*
         Даны две строки любой длины. Напишите программу,
@@ -109,18 +130,20 @@ public class Main {
 
         System.out.println("Задание 5:");
 
-        String a5 = "QWERTY";
-        String b5 = "hey";
+        String a = "QWERTY";
+        String b = "hey";
 
-        int minLength = Math.min(a5.length(), b5.length());
+        int minLength = Math.min(a.length(), b.length());
         System.out.println(minLength);
 
-        String result5 = a5.substring(a5.length() - minLength) + b5.substring(b5.length() - minLength);
+        String result = a.substring(a.length() - minLength) + b.substring(b.length() - minLength);
 
-        System.out.println(result5);
+        System.out.println(result);
         System.out.println();
 
+    }
 
+    public static void task6() {
         //Sixth task
         /*
         Напишите программу, которая выводит в консоль, сколько раз слово ”hi” встречается в строке.
@@ -132,21 +155,23 @@ public class Main {
         System.out.println("Задание 6:");
 
 
-        String a6 = "abc hi ho hihihi";
-        String b6 = "ABChi hi hi";
-        String c6 = "hihi hello hi";
+        String a = "abc hi ho hihihi";
+        String b = "ABChi hi hi";
+        String c = "hihi hello hi";
 
         String toFind = "hi";
 
-        String[] allTheStrings6 = {a6, b6, c6};
+        String[] allTheStrings = {a, b, c};
 
-        for (String s : allTheStrings6) {
+        for (String s : allTheStrings) {
             System.out.println("В строчке " + s + " фрагмент " + toFind + " найден "
                     + counterOfSubstr(s, toFind) + " раз");
         }
 
         System.out.println();
+    }
 
+    public static void task7() {
         //Seventh task
         /*
         Напишите программу, которая выводит в консоль n раз последние n символов строки, где n – целое число
@@ -157,14 +182,14 @@ public class Main {
 
         System.out.println("Задание 7:");
 
-        String a7 = "bundle";
-        String b7 = "formulate";
-        String c7 = "extension";
+        String a = "bundle";
+        String b = "formulate";
+        String c = "extension";
 
-        String[] allTheStrings7 = {a7, b7, c7};
+        String[] allTheStrings = {a, b, c};
 
-       int minLengthOfString = Integer.MAX_VALUE;
-        for (String i : allTheStrings7) {
+        int minLengthOfString = Integer.MAX_VALUE;
+        for (String i : allTheStrings) {
             if (i.length() < minLengthOfString)
                 minLengthOfString = i.length();
         }
@@ -174,16 +199,17 @@ public class Main {
         }
         */
 
-        for(String i:allTheStrings7)
-        {
+        for (String i : allTheStrings) {
             int numbRep = getRandomNumber(1, minLengthOfString);
-            String part7 = i.substring(i.length()-numbRep);
-            String result7 = part7.repeat(numbRep);
-            System.out.println(result7);
+            String part = i.substring(i.length() - numbRep);
+            String result = part.repeat(numbRep);
+            System.out.println(result);
         }
 
         System.out.println();
+    }
 
+    public static void task8() {
         //Eighth task
         /*
         Напишите программу, которая выводит в консоль максимальное количество идущих подряд одинаковых
@@ -196,20 +222,21 @@ public class Main {
 
         System.out.println("Задание 8:");
 
-        String a8 = "hoopla";
-        String b8 = "abbCCCddBBBxx";
-        String c8 = "";
+        String a = "hoopla";
+        String b = "abbCCCddBBBxx";
+        String c = "";
 
-        String [] allTheStrings8 = {a8,b8,c8};
+        String[] allTheStrings = {a, b, c};
 
-        for(String i:allTheStrings8)
-        {
+        for (String i : allTheStrings) {
             System.out.println(returnDupesCount(i));
         }
 
         System.out.println();
 
+    }
 
+    public static void task9() {
         //Ninth task
         /*
         Напишите программу, которая выводит в консоль максимальное количество идущих подряд одинаковых
@@ -222,14 +249,14 @@ public class Main {
 
         System.out.println("Задание 9:");
 
-        String a9  = "Word";
-        String aSep9 = "X";
+        String a = "Word";
+        String aSep = "X";
         int nRep = 3;
 
         String[] words = new String[nRep];
-        Arrays.fill(words, a9);
+        Arrays.fill(words, a);
 
-        String result = String.join(aSep9, words);
+        String result = String.join(aSep, words);
         System.out.println(result);
 
         //!!!
@@ -255,8 +282,7 @@ public class Main {
         return result;
     }*/
 
-    public static int returnDupesCount (String string)
-    {
+    public static int returnDupesCount(String string) {
 
         if (string.isEmpty())
             return 0;
@@ -264,16 +290,14 @@ public class Main {
         int maxLength = 1;
         char currentChar = string.charAt(0);
 
-        for (int i=1; i< string.length();i++)
-        {
-            if(string.charAt(i) == currentChar)
-            {
+        for (int i = 1; i < string.length(); i++) {
+            if (string.charAt(i) == currentChar) {
                 currentLength++;
                 continue;
             }
             currentChar = string.charAt(i);
             maxLength = Math.max(maxLength, currentLength);
-            currentLength=1;
+            currentLength = 1;
         }
 
         maxLength = Math.max(maxLength, currentLength);
